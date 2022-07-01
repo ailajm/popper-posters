@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .App {
   text-align: center;
 }
@@ -5,11 +6,91 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+=======
+/* GLOBAL */
+
+.marquee {
+  width: 500px;
+  height: 50px;
+  margin: 25px auto;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #000;
+  margin: 25px auto;
+  color: #61dafb;  
+  background-color: #222;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .5), 0px 1px 0px rgba(250, 250, 250, .2);
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .5), 0px 1px 0px rgba(250, 250, 250, .2);
+}
+
+.blink_me {
+  animation: blinker 3.75s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.App {
+  text-align: center;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ELEMENTS */
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  width: 100vw;
+>>>>>>> master
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+<<<<<<< HEAD
   color: white;
 }
 
+=======
+  color: chartreuse;
+}
+
+.scrollUp {
+  position: fixed;
+  width: 100%;
+  right: 100vh;
+  bottom: 40px;
+  height: 20px;
+  font-size: 3rem;
+  z-index: 1;
+  cursor: pointer;
+  color: chartreuse;
+}
+
+/* MOVIE DATA ELEMENTS */
+
+.movieCard {
+  border: ridge 4px slategrey;
+  margin-bottom: 10px;
+  width: 50vw;
+  background: orangered;
+  -webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .5), 0px 1px 0px rgba(250, 250, 250, .2);
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .5), 0px 1px 0px rgba(250, 250, 250, .2);
+}
+
+/* #moviePoster {
+} */
+
+.movieTitle {
+  margin-top: 0;
+}
+>>>>>>> master
