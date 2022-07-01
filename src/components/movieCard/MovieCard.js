@@ -1,7 +1,7 @@
 const MovieCard = (props) => {
     return (
         <div class='movieCard'>
-            <div class='movieTitle marquee'>
+            <div class='movieTitle'>
                 {props.title}
             </div>
             <div class='moviePoster'>

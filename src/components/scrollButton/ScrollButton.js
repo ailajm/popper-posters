@@ -30,6 +30,7 @@ const ScrollButton = (props) =>{
     <FaArrowCircleUp 
         onClick={scrollToTop} 
         style={{display: visible ? 'inline' : 'none'}}
+        className='scrollUp'
     />
   );
 }

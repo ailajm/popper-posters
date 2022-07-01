@@ -1,8 +1,8 @@
-// import logo from './logo.svg';
 import './App.css';
 import {useState, useEffect} from 'react';
 import MovieCard from './components/movieCard/MovieCard';
 import ScrollButton from './components/scrollButton/ScrollButton';
+import Marquee from './components/marquee/Marquee';
 
 function App() {
   const [state, setState] = useState([]);
@@ -27,17 +27,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 className='blink_me'>Now Showing!</h1>
-      </header>
+      <Marquee/>
       <div className='movie'>
         {state.map((movie) => (
           <MovieCard key={movie.title} title={movie.title} poster={movie.poster_path} />
         ))}
       </div>
-      <div className='scrollUp'>
-        <ScrollButton/>
-      </div>
+      <ScrollButton/>
     </div>
   );
 }
