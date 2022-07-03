@@ -2,30 +2,33 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import MovieCard from './components/movieCard/MovieCard';
 import ScrollButton from './components/scrollButton/ScrollButton';
-import Marquee from './components/marquee/Marquee';
+// import Marquee from './components/marquee/Marquee';
+import MovieSearchBar from './components/movieSearchBar/MovieSearchBar'
 
 function App() {
   const [state, setState] = useState([]);
-  // let USER_QUERY;
-  
+  const { search } = window.location;
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  const BASE_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US`;
+  let userQuery = new URLSearchParams(search).get('s');
+  let SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${userQuery}&page=1&include_adult=false`
+  let userSearch;
+  let movies;
+  let marqueeHeader;
+
   const getMovieData = async () => {
     try {
-      const API_KEY = '31c8c9bf37b71837f31ec5a6e33bfac5';
-      const BASE_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US`;
-      // let SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${USER_QUERY}&page=1&include_adult=false`
-      let movies;
-      // let userSearch;
 
       // ADD SEARCH LOGIC
-      // if(search button clicked) {
-      //  userSearch = await fetch(SEARCH_URL).then(res => res.json());
+      if(!userQuery) {
+        movies = await fetch(BASE_URL).then(res => res.json());
+        
+        setState(movies.results);
+      }else {
+        userSearch = await fetch(SEARCH_URL).then(res => res.json());
 
-      //  setState(userSearch.results);
-      // }else {
-      movies = await fetch(BASE_URL).then(res => res.json());
-      
-      setState(movies.results);
-      // };
+        setState(userSearch.results);
+      };
       
     } catch (error) {
       console.log(error);
@@ -36,10 +39,31 @@ function App() {
     getMovieData();
   }
   );
+  
+  if(!userQuery){
+    marqueeHeader = 'Now Showing!';
+  }else {
+    marqueeHeader = 'Movies';
+  };
 
   return (
     <div className="App">
-      <Marquee/>
+      <div className='marquee'>
+          <span className="leftDot"></span>
+          <span className="leftLittleDot"></span>
+          <span className="leftBigDot"></span>
+          <span className="leftDot"></span>
+          <span className="leftLittleDot"></span>
+          <span className="leftBigDot"></span>
+          <h1>{marqueeHeader}</h1>
+          <span className="rightDot"></span>
+          <span className="rightBigDot"></span>
+          <span className="rightLittleDot"></span>
+          <span className="rightDot"></span>
+          <span className="rightBigDot"></span>
+          <span className="rightLittleDot"></span>
+      </div>
+      <MovieSearchBar/>
       <div className='movie'>
         {state.map((movie) => (
           <MovieCard key={movie.title} title={movie.title} poster={movie.poster_path} />
