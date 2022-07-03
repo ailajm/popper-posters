@@ -239,7 +239,18 @@ sub, sup {
   margin-top: 0;
 }
 
-.noResultsScreen {
-  background: url('/public/cyborg-face-5.png');
-  background-size: 100%;
+.wrapper {
+  position: relative;
+  max-width: 1298px;
+  height: auto;
+  margin: 2em auto 0 auto;
+}
+
+.box {
+  max-width: 70%;
+  min-height: auto;
+  margin: 0 auto;
+  padding: 1em 1em;
+  text-align: center;
+  color: chartreuse;
 }

@@ -70,6 +70,7 @@ function App() {
           <MovieCard key={movie.title} title={movie.title} poster={movie.poster_path} />
         ))}
       </div>
+      {/* <NoResults/> */}
       <ScrollButton/>
     </div>
   );

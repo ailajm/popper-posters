@@ -1,7 +1,12 @@
 const NoResults = () => {
     return(
         <div className="noResultsScreen">
-            <h1 className="noResultsText">Oooops.....no results.</h1>
+            <div className="wrapper">
+                <div className="box">
+                    <img src="cyborg-face-5.png" alt="Sad Face"></img>
+                    <p>Sorry, it's me, not you.</p>
+                </div>
+            </div>
         </div>
     )
 };
