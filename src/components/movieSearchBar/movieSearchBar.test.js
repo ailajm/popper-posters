@@ -16,8 +16,8 @@ test('should not have any accessibility violations', async () => {
 test('should render 8 movies when user searches for kfc', () => {
     render(<App />);
 
-    // let movies = screen.getAllByRole('listitem');
-    // expect(movies.results).toEqual(4);
+    let movies = screen.getAllByRole('listitem');
+    expect(movies.results).toEqual(4);
 
     const movieSearchBar = screen.getByRole('textbox');
     userEvent.type(MovieSearchBar, 'preact');

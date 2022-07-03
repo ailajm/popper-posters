@@ -4,6 +4,7 @@ import MovieCard from './components/movieCard/MovieCard';
 import ScrollButton from './components/scrollButton/ScrollButton';
 // import Marquee from './components/marquee/Marquee';
 import MovieSearchBar from './components/movieSearchBar/MovieSearchBar'
+// import NoResults from './components/noResults/NoResults';
 
 function App() {
   const [state, setState] = useState([]);
