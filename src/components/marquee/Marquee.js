@@ -1,9 +1,8 @@
 // MARQUEE-ESQUE HEADER COMPONENT FOR APP
-
 const Marquee = () => {
 
     return (
-        
+
         <div className='marquee'>
             <span className="leftDot"></span>
             <span className="leftLittleDot"></span>

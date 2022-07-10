@@ -1,11 +1,11 @@
 // IMPORTS
 import './App.css';
 import {useState, useEffect} from 'react';
-import MovieCard from './components/movieCard/MovieCard';
-import ScrollButton from './components/scrollButton/ScrollButton';
+import MovieCard from './components/card/Card';
+import ScrollButton from './components/topScrollButton/TopScrollButton';
 // import Marquee from './components/marquee/Marquee';
-import MovieSearchBar from './components/movieSearchBar/MovieSearchBar'
-// import NoResults from './components/noResults/NoResults';
+import MovieSearchBar from './components/search/MovieSearchBar'
+// import NoResults from './components/errorScreen/NoResults';
 
 // SET UP APP
 function App() {
@@ -13,13 +13,16 @@ function App() {
   // APP VARIABLES
   const [state, setState] = useState([]);
   const { search } = window.location;
+  const REGION = 'en-US';
+  const PAGE_NUM = 1;
   const API_KEY = process.env.REACT_APP_API_KEY;
-  const BASE_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US`;
+  const BASE_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=${REGION}`;
   let userQuery = new URLSearchParams(search).get('s');
-  let SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${userQuery}&page=1&include_adult=false`
+  let SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=${REGION}&query=${userQuery}&page=${PAGE_NUM}&include_adult=false`
   let userSearch;
   let movies;
   let marqueeHeader;
+  let TRENDING_PEOPLE_URL = `https://api.themoviedb.org/3/person/popular?api_key=${API_KEY}&language=${REGION}&page=${PAGE_NUM}`;
 
   // FUNCTION TO FETCH MOVIE DATA
   const getMovieData = async () => {
@@ -71,6 +74,7 @@ function App() {
           <span className="rightLittleDot"></span>
       </div>
       <MovieSearchBar/>
+      <a href={TRENDING_PEOPLE_URL}>Who's hot?!</a>
       <div className='movie'>
         {state.map((movie) => (
           <MovieCard key={movie.title} title={movie.title} poster={movie.poster_path} />

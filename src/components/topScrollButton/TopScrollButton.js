@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {FaArrowCircleUp} from 'react-icons/fa';
 
 // SETS UP SCROLL TO TOP BUTTON COMPONENT
-const ScrollButton = (props) =>{
+const TopScrollButton = (props) =>{
   
   const [visible, setVisible] = useState(false)
   
@@ -37,4 +37,4 @@ const ScrollButton = (props) =>{
   );
 };
   
-export default ScrollButton;
+export default TopScrollButton;

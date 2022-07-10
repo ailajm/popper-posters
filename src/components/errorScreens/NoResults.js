@@ -8,7 +8,7 @@ const NoResults = () => {
             <div className="wrapper">
                 <div className="box">
                     <img src="cyborg-face-5.png" alt="Sad Face"></img>
-                    <p>Sorry, it's me, not you.</p>
+                    <p>We've got nothing</p>
                 </div>
             </div>
         </div>
