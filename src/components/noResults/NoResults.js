@@ -1,5 +1,9 @@
+// SETS UP COMPONENT TO DISPLAY WHEN NO RESULTS ARE FOUND DURING SEARCH
+
 const NoResults = () => {
+
     return(
+        
         <div className="noResultsScreen">
             <div className="wrapper">
                 <div className="box">

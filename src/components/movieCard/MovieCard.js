@@ -1,5 +1,9 @@
+// SETS UP "CARD" TO PLUG IN MOVIE DATA
+
 const MovieCard = (props) => {
+
     return (
+
         <div className='movieCard'>
             <div className='movieTitle'>
                 {props.title}

@@ -12,7 +12,7 @@ html, body {
 	background: #fff;
 	color: #000;
 }
-	/* sets the body height of the browser, so that backgrounds and div heights work correctly. Color and background will almost certainly be altered; they are just placeholders */
+	/* sets the body height of the browser, so that backgrounds and div heights work correctly. */
 	
 body {
 	font-size: 1.4rem;
@@ -33,7 +33,7 @@ footer, header, nav, section, video {
 h1 {
 	font-size: 1.4rem;
 }
-	/* begins to set up font sizes relative to base rem – h1 has been used as an example */
+	/* begins to set up font sizes relative to base rem */
 	
 p { 
 	-ms-word-break: break-all;
@@ -106,15 +106,15 @@ sub, sup {
 
 .App {
   text-align: center;
-  /* background: black; */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../public/seats.jpg");  
+  background: black;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../public/seats-cropped.jpg");  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-position: center;
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
+  background-position: bottom;
+  /* background-repeat: no-repeat;
+  background-size: cover; */
 }
 
 .visually-hidden {
@@ -125,12 +125,6 @@ sub, sup {
   position: absolute;
   white-space: nowrap;
   width: 1px;
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
 }
 
 /* COMPONENTS */
@@ -175,6 +169,7 @@ sub, sup {
   border-radius: 50%;
   display: inline-block;
   animation: blinker 1.75s linear infinite;
+  margin-top: 1vh;
 }
 
 .rightLittleDot {
@@ -184,6 +179,7 @@ sub, sup {
   border-radius: 50%;
   display: inline-block;
   animation: blinker 1.75s linear infinite;
+  margin-top: 2vh;
 }
 
 .leftDot {
@@ -194,6 +190,7 @@ sub, sup {
   border-radius: 50%;
   display: inline-block;
   animation: blinker 3.75s linear infinite;
+  margin-top: 10vh;
 }
 .rightDot {
   height: 25px;
@@ -202,6 +199,7 @@ sub, sup {
   border-radius: 50%;
   display: inline-block;
   animation: blinker 3.75s linear infinite;
+  margin-top: 5vh;
 }
 
 
@@ -212,6 +210,7 @@ sub, sup {
   border-radius: 50%;
   display: inline-block;
   animation: blinker 5s linear infinite;
+  margin-top: 3vh;
 }
 
 .rightBigDot {
@@ -221,18 +220,20 @@ sub, sup {
   border-radius: 50%;
   display: inline-block;
   animation: blinker 5s linear infinite;
+  margin-top: 10vh;
 }
 
 .movieCard {
   border: ridge 4px slategrey;
   margin-bottom: 10px;
-  width: 50vw;
+  width: 30vw;
   background: orangered;
   -webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .5), 0px 1px 0px rgba(250, 250, 250, .2);
   box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .5), 0px 1px 0px rgba(250, 250, 250, .2);
 }
 
-/* #moviePoster {
+/* .moviePoster {
+
 } */
 
 .movieTitle {
@@ -253,4 +254,12 @@ sub, sup {
   padding: 1em 1em;
   text-align: center;
   color: chartreuse;
+}
+
+/* ANIMATIONS */
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }

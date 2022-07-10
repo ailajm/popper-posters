@@ -1,4 +1,7 @@
+// SETS UP SEARCH BAR COMPONENT TO SEARCH MOVIES
+
 const MovieSearchBar = () => (
+
     <form action="/" method="get">
         <label htmlFor="header-search">
             <span className="visually-hidden">Search movies</span>

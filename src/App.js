@@ -1,3 +1,4 @@
+// IMPORTS
 import './App.css';
 import {useState, useEffect} from 'react';
 import MovieCard from './components/movieCard/MovieCard';
@@ -6,7 +7,10 @@ import ScrollButton from './components/scrollButton/ScrollButton';
 import MovieSearchBar from './components/movieSearchBar/MovieSearchBar'
 // import NoResults from './components/noResults/NoResults';
 
+// SET UP APP
 function App() {
+
+  // APP VARIABLES
   const [state, setState] = useState([]);
   const { search } = window.location;
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -17,37 +21,39 @@ function App() {
   let movies;
   let marqueeHeader;
 
+  // FUNCTION TO FETCH MOVIE DATA
   const getMovieData = async () => {
+    
     try {
 
-      // ADD SEARCH LOGIC
+      // SEARCH & FETCH LOGIC
       if(!userQuery) {
+    
         movies = await fetch(BASE_URL).then(res => res.json());
         
         setState(movies.results);
       }else {
+
         userSearch = await fetch(SEARCH_URL).then(res => res.json());
 
         setState(userSearch.results);
       };
       
-    } catch (error) {
-      console.log(error);
     }
-  }
-  
-  useEffect(() => {
-    getMovieData();
-  }
-  );
-  
-  if(!userQuery){
-    marqueeHeader = 'Now Showing!';
-  }else {
-    marqueeHeader = 'Movies';
+    // ERROR HANDLING FOR MOVIE DATA 
+    catch(error) {console.log(error);}
   };
+  
+  // MOVIE DATA HOOK
+  useEffect(() => {getMovieData();});
+  
+  // DYNAMIC HEADER
+  if(!userQuery){marqueeHeader = 'Now Showing!';}
+  else {marqueeHeader = 'Movies';};
 
+  // RENDER
   return (
+
     <div className="App">
       <div className='marquee'>
           <span className="leftDot"></span>
