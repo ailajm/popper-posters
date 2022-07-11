@@ -148,6 +148,15 @@ sub, sup {
   font-family: 'Permanent Marker', cursive;
 }
 
+.headerText {
+  position: relative;
+  top: 1vh;
+  width: 20vw;
+  font-size: 7vh;
+  font-style: italic;
+  text-overflow: ellipsis;
+}
+
 .scrollUp {
   position: fixed;
   width: 100%;

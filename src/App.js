@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 import MovieCard from './components/card/Card';
 import ScrollButton from './components/topScrollButton/TopScrollButton';
 // import Marquee from './components/marquee/Marquee';
-import MovieSearchBar from './components/search/MovieSearchBar'
+import MovieSearchBar from './components/movies/MovieSearchBar';
 // import NoResults from './components/errorScreen/NoResults';
 
 // SET UP APP
@@ -22,7 +22,7 @@ function App() {
   let userSearch;
   let movies;
   let marqueeHeader;
-  let TRENDING_PEOPLE_URL = `https://api.themoviedb.org/3/person/popular?api_key=${API_KEY}&language=${REGION}&page=${PAGE_NUM}`;
+  // let TRENDING_PEOPLE_URL = `https://api.themoviedb.org/3/person/popular?api_key=${API_KEY}&language=${REGION}&page=${PAGE_NUM}`;
 
   // FUNCTION TO FETCH MOVIE DATA
   const getMovieData = async () => {
@@ -65,7 +65,7 @@ function App() {
           <span className="leftDot"></span>
           <span className="leftLittleDot"></span>
           <span className="leftBigDot"></span>
-          <h1>{marqueeHeader}</h1>
+          <h1 className='headerText'>{marqueeHeader}</h1>
           <span className="rightDot"></span>
           <span className="rightBigDot"></span>
           <span className="rightLittleDot"></span>
@@ -74,7 +74,7 @@ function App() {
           <span className="rightLittleDot"></span>
       </div>
       <MovieSearchBar/>
-      <a href={TRENDING_PEOPLE_URL}>Who's hot?!</a>
+      {/* <a href={TRENDING_PEOPLE_URL}>Who's hot?!</a> */}
       <div className='movie'>
         {state.map((movie) => (
           <MovieCard key={movie.title} title={movie.title} poster={movie.poster_path} />

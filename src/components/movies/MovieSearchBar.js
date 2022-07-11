@@ -12,7 +12,7 @@ const MovieSearchBar = () => (
             placeholder="Search movies"
             name="s" 
         />
-        <button type="submit">Search</button>
+        <button type="submit" className="btn btn-success">Search</button>
     </form>
 );
 
