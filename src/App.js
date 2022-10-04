@@ -1,7 +1,7 @@
 // IMPORTS
 import './App.css';
 import {useState, useEffect} from 'react';
-import MovieCard from './components/card/Card';
+import MovieCard from './components/movies/Card';
 import ScrollButton from './components/topScrollButton/TopScrollButton';
 // import Marquee from './components/marquee/Marquee';
 import MovieSearchBar from './components/movies/MovieSearchBar';
@@ -58,6 +58,7 @@ function App() {
   return (
 
     <div className="App">
+      {/* FIND A SOLUTION FOR MOVING MARQUEE BACK TO COMPONENT FOLDER */}
       <div className='marquee'>
           <span className="leftDot"></span>
           <span className="leftLittleDot"></span>
@@ -75,12 +76,15 @@ function App() {
       </div>
       <MovieSearchBar/>
       {/* <a href={TRENDING_PEOPLE_URL}>Who's hot?!</a> */}
-      <div className='movie'>
+      <div className='movieCardGrid'>
         {state.map((movie) => (
           <MovieCard key={movie.title} title={movie.title} poster={movie.poster_path} />
         ))}
       </div>
-      {/* <NoResults/> */}
+      <div className='peopleCardGrid'>
+        {/* ADD PEOPLE CARD LOGIC */}
+      </div>
+      {/* <NoResults/>  <<<---  FIX LOGIC FOR NO RESULTS DISPLAY  */}
       <ScrollButton/>
     </div>
   );

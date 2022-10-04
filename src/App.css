@@ -157,6 +157,11 @@ sub, sup {
   text-overflow: ellipsis;
 }
 
+.movieCardGrid {
+  display: grid;
+  gap: 50px 100px;
+}
+
 .scrollUp {
   position: fixed;
   width: 100%;
